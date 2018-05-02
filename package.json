@@ -16,8 +16,12 @@
     "start": "ember serve",
     "test": "ember test"
   },
+  "dependencies": {
+    "babel-eslint": "8.2.2"
+  },
   "devDependencies": {
     "@ember-decorators/babel-transforms": "^2.0.0",
+    "@ember-decorators/component": "^2.0.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.1.3",
