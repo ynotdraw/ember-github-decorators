@@ -1,6 +1,9 @@
+import { tagName, classNames } from '@ember-decorators/component';
 import Component from '@ember/component';
 
-export default Component.extend({
-  tagName: 'li',
-  classNames: [ 'repository-card' ]
-});
+@classNames('repository-card')
+@tagName('li')
+export default class RepositoryCard extends Component {
+  // TODO:
+  // https://github.com/ember-decorators/argument
+}

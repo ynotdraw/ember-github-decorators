@@ -1,6 +1,6 @@
-import { alias } from '@ember/object/computed';
+import { alias } from '@ember-decorators/object/computed';
 import Controller from '@ember/controller';
 
-export default Controller.extend({
-  user: alias('model')
-});
+export default class ApplicationController extends Controller {
+  @alias('model') user;
+}

@@ -1,18 +1,14 @@
-import DS from 'ember-data';
+import { attr, hasMany } from '@ember-decorators/data';
+import Model from 'ember-data/model';
 
-const {
-  attr,
-  hasMany,
-  Model
-} = DS;
-
-export default Model.extend({
-  name: attr('string'),
-  publicRepos: attr('number'),
-  avatarUrl: attr('string'),
-  url: attr('string'),
-  company: attr('string'),
-  blog: attr('string'),
-  location: attr('string'),
-  repositories: hasMany('repositories')
-});
+export default class User extends Model {
+  @attr('string') name;
+  @attr('number') publicRepos;
+  @attr('string') avatarUrl;
+  @attr('string') url;
+  @attr('string') company;
+  @attr('string') blog;
+  @attr('string') avatarUrl;
+  @attr('string') location;
+  @hasMany('repositories') repositories;
+}
