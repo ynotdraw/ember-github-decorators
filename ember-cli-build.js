@@ -6,7 +6,8 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     'ember-cli-tailwind': {
-      buildTarget: 'app'
+      buildTarget: 'app',
+      shouldIncludeStyleguide: true
     }
   });
 
