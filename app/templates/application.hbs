@@ -1,5 +1,17 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class='bg-grey'>
+  <strong>{{ user.name }}</strong>
+</div>
+<div>
+  (repositories: {{ user.publicRepos }})
+</div>
+<div>
+  {{ user.avatarUrl }}
+</div>
+
+<ul>
+  {{#each user.repositories as |repo|}}
+    {{repository-card repo=repo}}
+  {{/each}}
+</ul>
 
 {{outlet}}

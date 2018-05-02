@@ -1,7 +1,6 @@
 # ember-github-decorators
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is an example repo of a GitHub client I'll use to demo [ember-decorators](https://github.com/ember-decorators/ember-decorators) at an Ember Dallas meetup. I also threw in [ember-cli-tailwind](https://github.com/embermap/ember-cli-tailwind) for the fun of it.
 
 ## Prerequisites
 
