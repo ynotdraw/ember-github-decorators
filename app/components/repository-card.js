@@ -1,6 +1,5 @@
 import { assert } from '@ember/debug';
 import { computed } from '@ember-decorators/object';
-import { get, getProperties } from '@ember/object';
 import { tagName, classNames } from '@ember-decorators/component';
 import Component from '@ember/component';
 
@@ -11,11 +10,13 @@ export default class RepositoryCard extends Component {
   // https://github.com/ember-decorators/argument
 
   didInsertElement() {
+    super.didInsertElement(...arguments);
+
     const {
       name,
       stars,
       forks
-    } = getProperties(this, 'name', 'stars', 'forks');
+    } = this;
 
     assert('name is required', name);
     assert('stars must be greater than or equal to 0', stars >= 0);
@@ -24,7 +25,7 @@ export default class RepositoryCard extends Component {
 
   @computed('stars')
   get starredTheme() {
-    const stars = get(this, 'stars');
+    const { stars } = this;
     return stars > 50 ? 'text-red-light' : 'text-blue-light';
   }
 }
