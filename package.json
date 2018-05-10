@@ -20,6 +20,7 @@
     "babel-eslint": "8.2.2"
   },
   "devDependencies": {
+    "@ember-decorators/argument": "^0.8.15",
     "@ember-decorators/babel-transforms": "^2.0.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
