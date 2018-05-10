@@ -1,17 +1,20 @@
-<div class='bg-grey'>
-  <strong>{{ user.name }}</strong>
+<div class='p-4 bg-grey-lightest h-full w-screen'>
+  <div class='bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden'>
+    <div class='sm:flex sm:items-center px-6 py-4'>
+      <img class='block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0' src={{user.avatarUrl}} alt=''>
+      <div class='text-center sm:text-left sm:flex-grow'>
+        <div class='mb-4'>
+          <p class='text-xl leading-tight'>{{user.name}}</p>
+          <p class='text-sm leading-tight text-grey-dark'>{{user.location}}</p>
+        </div>
+      </div>
+    </div>
+    {{#each user.repositories as |repo|}}
+      {{repository-card name=repo.fullName
+        stars=repo.stargazersCount
+        forks=repo.forksCount}}
+    {{/each}}
+  </div>
+  {{!-- Only doing the application route for the demo --}}
+  {{!-- {{outlet}} --}}
 </div>
-<div>
-  (repositories: {{ user.publicRepos }})
-</div>
-<div>
-  {{ user.avatarUrl }}
-</div>
-
-<ul>
-  {{#each user.repositories as |repo|}}
-    {{repository-card repo=repo}}
-  {{/each}}
-</ul>
-
-{{outlet}}

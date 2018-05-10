@@ -6,21 +6,11 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | repository-card', function(hooks) {
   setupRenderingTest(hooks);
 
+  // TODO: For some reason ember-qunit-assert-helpers isn't catching the assertion
+  //       when we attempt assert.expectAssertion(...) ?
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    await render(hbs`{{repository-card name='ynotdraw' stars=0 forks=0}}`);
 
-    await render(hbs`{{repository-card}}`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#repository-card}}
-        template block text
-      {{/repository-card}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'ynotdraw (0 stars | 0 forks)');
   });
 });

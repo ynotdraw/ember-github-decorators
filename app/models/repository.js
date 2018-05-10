@@ -6,4 +6,5 @@ export default class Repository extends Model {
   @attr('string') language;
   @attr('number') stargazersCount;
   @attr('string') htmlUrl;
+  @attr('number') forksCount;
 }
