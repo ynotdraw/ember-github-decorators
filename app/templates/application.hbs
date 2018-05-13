@@ -1,20 +1,16 @@
-<div class='p-4 bg-grey-lightest h-full w-screen'>
-  <div class='bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden'>
-    <div class='sm:flex sm:items-center px-6 py-4'>
-      <img class='block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0' src={{user.avatarUrl}} alt=''>
-      <div class='text-center sm:text-left sm:flex-grow'>
-        <div class='mb-4'>
-          <p class='text-xl leading-tight'>{{user.name}}</p>
-          <p class='text-sm leading-tight text-grey-dark'>{{user.location}}</p>
-        </div>
-      </div>
-    </div>
-    {{#each user.repositories as |repo|}}
-      {{repository-card name=repo.fullName
-        stars=repo.stargazersCount
-        forks=repo.forksCount}}
-    {{/each}}
+<nav class='flex items-center justify-between flex-wrap bg-teal p-6'>
+  <div class='flex items-center flex-no-shrink text-white mr-6'>
+    <span class='font-semibold text-xl tracking-tight'>GitHub Client</span>
   </div>
-  {{!-- Only doing the application route for the demo --}}
-  {{!-- {{outlet}} --}}
+  <div class='w-full block flex-grow lg:flex lg:items-center lg:w-auto'>
+    <div class='text-sm lg:flex-grow'>
+      {{#link-to 'search' (query-params account=null) class='block no-underline mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4'}}
+        Search
+      {{/link-to}}
+    </div>
+  </div>
+</nav>
+
+<div class='h-screen w-screen bg-grey-lightest'>
+  {{outlet}}
 </div>

@@ -8,6 +8,7 @@ import Component from '@ember/component';
 @classNames('repository-card p-3')
 @tagName('div')
 export default class RepositoryCard extends Component {
+  static positionalParams = ['name', 'stars', 'forks'];
 
   @required
   @argument
