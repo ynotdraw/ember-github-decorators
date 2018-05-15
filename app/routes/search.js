@@ -1,3 +1,5 @@
+import { action } from '@ember-decorators/object';
+import { set } from '@ember/object';
 import Route from '@ember/routing/route';
 
 export default class SearchRoute extends Route {
@@ -11,6 +13,11 @@ export default class SearchRoute extends Route {
     const loginName = account ? account : 'emberjs';
 
     return this.store.findRecord('user', loginName);
+  }
+
+  @action
+  willTransition() {
+    set(this, 'controller.searchInput', '');
   }
 }
 
@@ -29,6 +36,12 @@ export default class SearchRoute extends Route {
 //     const loginName = account ? account : 'emberjs';
 //
 //     return this.store.findRecord('user', loginName);
+//   },
+//
+//   actions: {
+//      willTransition() {
+//        set(this, 'controller.searchInput', '');
+//      }
 //   }
 // });
 
